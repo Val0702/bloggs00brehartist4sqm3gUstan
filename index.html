@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Google Systems - Archive</title>
+
+<style>
+  body{
+    margin:0;
+    background:#f1f3f4;
+    font-family: Arial, sans-serif;
+    font-size:13px;
+    color:#202124;
+  }
+
+  .topbar{
+    background:#fff;
+    border-bottom:1px solid #dadce0;
+    padding:10px 16px;
+    font-size:12px;
+    color:#5f6368;
+  }
+
+  .container{
+    max-width:900px;
+    margin:30px auto;
+    background:#fff;
+    padding:20px;
+    border:1px solid #dadce0;
+  }
+
+  .line{
+    margin:6px 0;
+  }
+
+  .dim{
+    color:#5f6368;
+  }
+
+  .error{
+    color:#d93025;
+    font-weight:bold;
+    margin-top:15px;
+  }
+
+  .searchbar{
+    background:#fff;
+    border:1px solid #dfe1e5;
+    padding:8px;
+    width:300px;
+    border-radius:20px;
+  }
+
+  .glitch-text{
+    font-family: "Courier New", monospace;
+    letter-spacing: 6px;
+    filter: blur(0.6px);
+    opacity: 0.85;
+    text-shadow: 1px 0 #d93025, -1px 0 #1a73e8;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  Google Systems › Internal Archive Viewer
+</div>
+
+<div class="container" id="screen">
+
+  <input class="searchbar" value="" readonly>
+
+  <div class="line dim">About 0 results (0.03 seconds)</div>
+
+  <div class="line">Searching internal databases...</div>
+  <div class="line dim">Checking ART_INDEX_09...</div>
+  <div class="line dim">Checking backup nodes...</div>
+  <div class="line">Querying metadata registry...</div>
+
+</div>
+
+<script>
+setTimeout(() => {
+  document.getElementById("screen").innerHTML = `
+
+    <input class="searchbar" value="" readonly>
+
+    <div class="line dim">About 0 results (0.01 seconds)</div>
+
+    <div class="error">No matching records found</div>
+
+    <div class="line dim">Artist record:</div>
+
+    <div class="line glitch-text">
+      L⟟ɆØN ⱯɌƁΞLÆⱿ
+    </div>
+
+    <div class="line dim">status: partially corrupted / access restricted</div>
+
+    <div class="line dim">Possible reasons:</div>
+    <div class="line dim">• Data purge executed</div>
+    <div class="line dim">• Record integrity loss</div>
+    <div class="line dim">• Access level insufficient</div>
+  `;
+}, 2500);
+</script>
+
+</body>
+</html>
